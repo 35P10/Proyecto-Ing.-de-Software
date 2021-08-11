@@ -114,6 +114,7 @@ public function show(sesion $sesion)
 ```
 
 * No ejecutar consultas en las plantillas Blade y utiliza el cargado prematuro (Problema N + 1)
+
 Malo (Para 100 ponentes, se ejecutarán 101 consultas):
 
 ```php

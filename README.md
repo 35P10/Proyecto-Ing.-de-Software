@@ -57,7 +57,7 @@ A continuación se mostrará la organización de carpetas y archivos, así como 
  }
  ```
 Convención de nombres para los métodos
-```php
+ ```php
     // Muestra opciones para el tipo fe evento que se quiera crear
     public function showCreateOptions($id_sesion)
     {
@@ -256,7 +256,13 @@ class User extends Authenticatable
 *  Open-Closed:
    
    Entonces una clase debe quedar abierto para extensión y cerrado para modificación. Para añadir funcionalidades debe escribirse nuevo código, no modificar código existente,   escribir código que no se tenga que cambiar cada vez que cambian los requerimientos . Ej con herencia y polimorfismo
-   
+
+   Por ejemplo la clase persona es la clase base que utilizaremos  para las clases usuario y ponente
+
+   <p align="center">
+      <img src="/imagenesINGSoft/AC1.jpeg" >
+      </p>
+
 *  Segregación de la Interfaz: 
 
    Según este principio es mejor tener una clase pequeña y especializada que una muy grande, para poder hacer un mejor objetivo hacia las necesidades del sistema. 

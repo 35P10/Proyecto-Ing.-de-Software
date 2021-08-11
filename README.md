@@ -214,12 +214,17 @@ class LoginController extends Controller
    Es menos cansado leer 5 filas de amplitud corta que un largo texto a ras de hoja, por ello es una buena prática evitar escribir líneas largas y horizontales.
 
 ## Estilos de Programación aplicados
-* Estilo de indentación
-* Programacion Orientada a Objetos
-* Código mantenible: 
-   Esto quiere decir que pueda ser actualizado cada cierto tiempo y que así el programa perdure.
-* Capitalizar Palabras Especiales de SQL: 
-   La interacción de bases de datos es una gran parte de la mayoría de las aplicaciones web. Si está escribiendo consultas SQL sin procesar, es una buena idea mantenerlas    legibles también. A pesar de que las palabras especiales y los nombres de funciones de SQL no distinguen entre mayúsculas y minúsculas, es una práctica común escribirlas en mayúsculas para distinguirlas de sus nombres de tabla y columna.
+* Programacion Orientada a Objetos: 
+El estilo de programación utilizado fue siguiendo el paradigma orientado a objetos, basándonos en el concepto de clases y objetos. Este tipo de programación se utiliza para estructurar un programa de software en piezas simples y reutilizables de planos de código (clases) para crear instancias individuales de objetos. 
+
+* 	Código mantenible: 
+El sistema está diseñado de forma que pueda ser actualizado cada cierto tiempo, con independencia entre sus funciones y clases, logrando así el programa perdure.
+
+* 	Capitalizar Palabras Especiales de SQL: 
+La interacción de bases de datos es una gran parte de la mayoría de las aplicaciones web. Si está escribiendo consultas SQL sin procesar, es una buena idea mantenerlas legibles también. A pesar de que las palabras especiales y los nombres de funciones de SQL no distinguen entre mayúsculas y minúsculas, es una práctica común escribirlas en mayúsculas para distinguirlas de sus nombres de tabla y columna.
+
+*	Estilo de indentación: 
+Se utiliza en lenguajes de programación que usan llaves para sangrar o delimitar bloques lógicos de código, donde es también un punto clave el buen estilo. Usando un estilo lógico y consistente hace el código de uno más legible. En el sistema intentamos ceñirnos a utilizar adecuadamente el uso de estos delimitadores, para mejor entendimiento del código.
 
 ## Principios SOLID aplicados
 * Single-responsability : 
@@ -278,16 +283,6 @@ class User extends Authenticatable
       </p>
 
    Por ejemplo, en la imagen se ve que se han independizado las funciones, entre ellas editar la sesión, y otras. Esto también ayuda a la reutilización del código en caso de cambios o mantenimiento. 
-
-*  Open-Closed:
-   
-   Entonces una clase debe quedar abierto para extensión y cerrado para modificación. Para añadir funcionalidades debe escribirse nuevo código, no modificar código existente,   escribir código que no se tenga que cambiar cada vez que cambian los requerimientos . Ej con herencia y polimorfismo
-
-   Por ejemplo la clase persona es la clase base que utilizaremos  para las clases usuario y ponente
-
-   <p align="center">
-      <img src="/imagenesINGSoft/AC1.jpeg" >
-      </p>
 
 *  Segregación de la Interfaz: 
 

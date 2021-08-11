@@ -45,9 +45,9 @@ Vistas | kebab-case | show-filtered.blade.php | ~~showFiltered.blade.php, show_f
 
 A continuación se mostrará la organización de carpetas y archivos, así como el nombramiento de los modelos, controladores, y vistas:
   <p align="center">
-    <img src="/imagenesINGSoft/bp-1.png" width="650" >
-    <img src="/imagenesINGSoft/bp-2.png" width="650" >
-    <img src="/imagenesINGSoft/bp-3.png" width="650" >
+    <img src="/imagenesINGSoft/bp-1.png">
+    <img src="/imagenesINGSoft/bp-2.png">
+    <img src="/imagenesINGSoft/bp-3.png">
   </p>
  Convención de nombres para relaciones de hasOne o belongsTo
  ```php
@@ -77,6 +77,21 @@ Convención de nombres para los métodos
         return redirect()->route('home.index');
     }
 ```
+```php
+// Rutas de Concurso
+Route::get('/concurso/crear/{id_sesion}', [ConcursoController::class, 'create'])->name('concurso.crear');
+Route::post('/concurso/guardar/{sesion}', [ConcursoController::class, 'store'])->name('concurso.guardar');
+Route::get('/concurso/editar/{evento}', [ConcursoController::class, 'edit'])->name('concurso.editar');
+Route::put('/concurso/{evento}', [ConcursoController::class, 'update'])->name('concurso.actualizar');
+
+// Rutas de ponencia
+Route::get('/ponencia/crear/{id_sesion}', [PonenciaController::class, 'create'])->name('ponencia.crear');
+Route::post('/ponencia/guardar/{sesion}', [PonenciaController::class, 'store'])->name('ponencia.guardar');
+Route::get('/ponencia/editar/{evento}', [PonenciaController::class, 'edit'])->name('ponencia.editar');
+Route::put('/ponencia/{evento}', [PonenciaController::class, 'update'])->name('ponencia.actualizar');
+
+
+```
 Convención de nombre para las propiedades de modelo
 ```php
         $evento->concurso->update(request()->only(['num_participantes', 'requisitos', 'ganadores', 'moderador']));
@@ -85,10 +100,6 @@ Convención de nombre para las propiedades de modelo
 * Utiliza sintaxis cortas y legibles siempre que sea posible
 * No coloques ningún tipo de lógica en los archivos de rutas.
 ```php
-// Rutas de evento
-Route::get('evento/mostrar-opciones/{id_sesion}', [EventoController::class, 'showCreateOptions'])->name('evento.mostrarOpciones');
-Route::get('sesion/mostrar/{sesion}', [EventoController::class, 'show'])->name('sesion.mostrar');
-Route::delete('/evento/{evento}', [EventoController::class, 'destroy'])->name('evento.eliminar');
 // Rutas de Concurso
 Route::get('/concurso/crear/{id_sesion}', [ConcursoController::class, 'create'])->name('concurso.crear');
 Route::post('/concurso/guardar/{sesion}', [ConcursoController::class, 'store'])->name('concurso.guardar');

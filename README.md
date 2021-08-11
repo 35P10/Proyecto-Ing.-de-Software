@@ -150,12 +150,10 @@ class LoginController extends Controller
    Es menos cansado leer 5 filas de amplitud corta que un largo texto a ras de hoja, por ello es una buena prática evitar escribir líneas largas y horizontales.
 
 ## Estilos de Programación aplicados
-* Estilo de indentación
-* Programacion Orientada a Objetos
+
 * Código mantenible: 
    Esto quiere decir que pueda ser actualizado cada cierto tiempo y que así el programa perdure.
-* Capitalizar Palabras Especiales de SQL: 
-   La interacción de bases de datos es una gran parte de la mayoría de las aplicaciones web. Si está escribiendo consultas SQL sin procesar, es una buena idea mantenerlas    legibles también. A pesar de que las palabras especiales y los nombres de funciones de SQL no distinguen entre mayúsculas y minúsculas, es una práctica común escribirlas en mayúsculas para distinguirlas de sus nombres de tabla y columna.
+   
 
 ## Principios SOLID aplicados
 * Single-responsability : 

@@ -206,18 +206,14 @@ class User extends Authenticatable
 
 
 ```
-
-Se eligió esta clase porque cumple con las características de este, es decir, la Clase Sesion Evento solo se encarga únicamente de recopilar datos como el id de una sesión, el id del evento y la hora de inicio de una evento.
-<p align="center">
-  <img src="/imagenesINGSoft/respUnica4.jpeg" >
-      </p>
 El principio de responsabilidad única busca que el código quede encapsulado y exista independencia entre las clases, sus funcionalidades. Al utilizar clases hemos procurado cumplir con este criterio, ya que encapsulamos la funcionalidad de cada una para que realicen una única función. 
 <p align="center">
   <img src="/imagenesINGSoft/respUnica4.png" >
       </p>
 Por ejemplo, en la imagen se ve que se han independizado las funciones, entre ellas editar la sesión, y otras. Esto también ayuda a la reutilización del código en caso de cambios o mantenimiento. 
 
-* Open-Closed:
+*  Open-Closed:
+
 Entonces una clase debe quedar abierto para extensión y cerrado para modificación. Para añadir funcionalidades debe escribirse nuevo código, no modificar código existente, escribir código que no se tenga que cambiar cada vez que cambian los requerimientos . Ej con herencia y polimorfismo
 
 Por ejemplo la clase persona es la clase base que utilizaremos  para las clases usuario y ponente
@@ -225,8 +221,9 @@ Por ejemplo la clase persona es la clase base que utilizaremos  para las clases 
 <p align="center">
   <img src="/imagenesINGSoft/AC1.jpeg" >
       </p>
+
 *  Segregación de la Interfaz: 
-Mejor tener una clase pequeña y especializada que una muy grande para targuetizar mejor las necesidades.
+
 Según este principio es mejor tener una clase pequeña y especializada que una muy grande, para poder hacer un mejor objetivo hacia las necesidades del sistema. 
 En nuestro trabajo, hemos procurado seguir esta norma al no sobrecargar las funcionalidades de las clases sin más de lo que se necesite. Por ejemplo en la captura se ve que cada función está dirigida a un único fin, aunque pertenezcan al mismo sistema, estan especializados. 
 <p align="center">
@@ -234,14 +231,12 @@ En nuestro trabajo, hemos procurado seguir esta norma al no sobrecargar las func
       </p>
 
 * Inversión de dependencia: 
+
   El principio de inversión de dependencia busca reducir el acople entre sistemas de software. 
   En nuestro caso, el sistema independiza la tecnología de bases de datos, ya que podríamos migrar con facilidad a otro sistema de bases de datos, pues utilizamos el framework Laravel, donde existe una abstracción que nos permite cambiar el tipo de BD utilizada mediante modificar algunos datos de forma sencilla. Esto nos brinda libertad para la implementación y cambiar de tecnología de BD afectando mínimamente las partes del sistema
 
 <p align="center">
-  <img src="/imagenesINGSoft/dep1.jpeg" >
-  <img src="/imagenesINGSoft/dep2.jpeg" >
-  <img src="/imagenesINGSoft/dep3.jpeg" >
-  <img src="/imagenesINGSoft/dep4.jpeg" >
+  <img src="" >
  </p>
 No dependemos de la tecnología que empleamos en la base de datos, ya que la comunicación entre los componentes del sistema es siempre mediante interfaces, y esto nos permite tener libertad a la hora de decidir las implementaciones concretas de cada elemento. Por ejemplo, podríamos cambiar la conexión a la base de datos de mysql a mongodb o postgresql sin afectar a ninguna parte del sistema.
 
@@ -253,14 +248,14 @@ Cada parte del proyecto tiene un dominio que aísla los códigos formados por m�
 <p align="center">
   <img src="/imagenesINGSoft/dd1.png" >
       </p>
-* Entities: 
+*  Entities: 
 
 Existen diferentes entidades en el Sistema que desarrollamos, entre ellas podríamos mencionar las entidades Ponente, Participante y Evento, ya que son objeto del dominio que mantienen un estado y comportamiento más allá de la ejecución de la aplicación. A continuación se muestra la entidad Ponente, que posee una identificación única mediante su DNI.
 <p align="center">
   <img src="/imagenesINGSoft/dd2.png" >
       </p>
       
-* Value Objects:
+*  Value Objects:
 
 Los Value Objects (VO) son solo valores, no entidades, por si solos no significan nada, tienen que estar acompañados de una entidad para que signifiquen algo o ser interpretados. 
 En nuestro sistema identificamos algunos Value Objects, como el siguiente: 
@@ -270,7 +265,7 @@ En nuestro sistema identificamos algunos Value Objects, como el siguiente:
       </p>
  La clase SesionEvento si bien aparece como un Entity en realidad solo es un dato que conecta la relacion N-M de las entidades Sesión y Evento y almacena el dato de la hora de Inicio. Sin estas otras entidades perdería sentido por sí misma. Es un Value Object.
  
-* Ubiquitous Language: 
+*  Ubiquitous Language: 
 
 Es un concepto de gran importancia porque, además de servir de vehículo de entendimiento en el negocio y entre el negocio e IT, también sirve para identificar las particiones del Domain, que darán lugar a soluciones modulares
 
@@ -279,7 +274,7 @@ Es un concepto de gran importancia porque, además de servir de vehículo de ent
     <img src="/imagenesINGSoft/dd5.png" >
       </p>
 
-* Aggregates: 
+*  Aggregates: 
 Los agregados representan el límite lógico de un conjunto de datos, permiten modelar el sistema en pequeños subconjuntos. Para acceder a los elementos de un agregado debemos acceder mediante una entidad principal, que le sirve a modo de entrada. 
 
 Existe un agregado “Sesión” ya que esta entidad posee relaciones con otras a nivel de negocio y su acceso es mediante la entidad Programa.
@@ -288,7 +283,7 @@ Existe un agregado “Sesión” ya que esta entidad posee relaciones con otras 
   <img src="/imagenesINGSoft/dd6.png" >
   <img src="/imagenesINGSoft/dd7.png">
       </p>
-* Repository:
+*  Repository:
  
   En nuestro proyecto tenemos clases, o más famosamente llamados controladores (MVC), que tienen la función de repositorio, ya que, son los que controlan, dirigen, a la aplicación   por dónde debe ir dependiendo de lo que el usuario requiera al interactuar con dicha aplicación.
    <p align="center">

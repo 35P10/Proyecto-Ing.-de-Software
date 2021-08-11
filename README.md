@@ -239,7 +239,7 @@ El estilo de programación utilizado fue siguiendo el paradigma orientado a obje
 El sistema está diseñado de forma que pueda ser actualizado cada cierto tiempo, con independencia entre sus funciones y clases, logrando así el programa perdure.
  
 * Composición de funciones.:
-  Esta sección muestra tres formas diferentes de conectar las llamadas a funciones. La primera utiliza la recursión. La segunda utiliza un estilo de paso de continuación, donde a cada función se le da también la siguiente función que debe ser llamada. El programa resultante es un poco difícil de leer debido a esto. El tercero ilustra el concepto de mónada, y todas las llamadas a las funciones y los valores resultantes se hacen a través de la mónada, creando una tubería de llamadas.
+  Esta sección muestra como se conectan las llamadas a funciones. Se utiliza un estilo de paso de continuación, donde a cada función se le da también la siguiente función que debe ser llamada.
 
 ## Principios SOLID aplicados
 * Single-responsability : 

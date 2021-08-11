@@ -29,7 +29,7 @@ En el presente proyecto usamos HTML, CSS ; el gestor de Base de Datos se uso MyS
 
 ## Práctica de código legible aplicadas
 
-* No coloques JS ni CSS en las plantillas Blade y no coloques HTML en clases de PHP
+* No colocar JS ni CSS en las plantillas Blade y no coloques HTML en clases de PHP
 * Convención de Laravel para los nombres, organización de archivos y carpetas:
   Se siguen los [estándares PSR](http://www.php-fig.org/psr/psr-2/), también, sigue la convención aceptada por la comunidad. Para la organización de archivos y caroetas , técnicamente, se podría escribir el código de una aplicación completo dentro de un solo archivo. Pero eso resultaría en una pesadilla para leer y mantener. Es por ello que siguiendo el MVC se organizaron las carpetas y archivos. 
 
@@ -43,7 +43,45 @@ Propiedad de modelo | snake_case | $model->created_at | ~~$model->createdAt~~
 Método | camelCase | traerTodo | ~~traer_todo~~
 Vistas | kebab-case | show-filtered.blade.php | ~~showFiltered.blade.php, show_filtered.blade.php~~
 
+A continuación se mostrará la organización de carpetas y archivos, así como el nombramiento de los modelos, controladores, y vistas:
+  <p align="center">
+    <img src="bp-1.png" width="650" >
+    <img src="bp-2.png" width="650" >
+    <img src="bp-3.png" width="650" >
+  </p>
+ Convención de nombres para relaciones de hasOne o belongsTo
+ ```php
+ public function sesionEvento()
+ {
+    return $this->hasOne(SesionEvento::class, 'id_evento');
+ }
+ ```
+Convención de nombres para los métodos
+```php
+    // Muestra opciones para el tipo fe evento que se quiera crear
+    public function showCreateOptions($id_sesion)
+    {
+        return view('evento.show-create-options', compact('id_sesion'));
+    }
 
+    // Muestra eventos en específico que pertenecen a una sesión
+    public function show(sesion $sesion)
+    {
+        return view('evento.show', compact('sesion'));
+    }
+
+    //Función para eliminar un vento
+    public function destroy(evento $evento)
+    {
+        $evento->delete();
+        return redirect()->route('home.index');
+    }
+```
+Convención de nombre para las propiedades de modelo
+```php
+        $evento->concurso->update(request()->only(['num_participantes', 'requisitos', 'ganadores', 'moderador']));
+        $evento->sesionEvento->where('id_evento', $evento->id)->update(request()->only(['hora_inicio']));
+```
 * Utiliza sintaxis cortas y legibles siempre que sea posible
 * No coloques ningún tipo de lógica en los archivos de rutas.
 ```php
@@ -150,10 +188,12 @@ class LoginController extends Controller
    Es menos cansado leer 5 filas de amplitud corta que un largo texto a ras de hoja, por ello es una buena prática evitar escribir líneas largas y horizontales.
 
 ## Estilos de Programación aplicados
-
+* Estilo de indentación
+* Programacion Orientada a Objetos
 * Código mantenible: 
    Esto quiere decir que pueda ser actualizado cada cierto tiempo y que así el programa perdure.
-   
+* Capitalizar Palabras Especiales de SQL: 
+   La interacción de bases de datos es una gran parte de la mayoría de las aplicaciones web. Si está escribiendo consultas SQL sin procesar, es una buena idea mantenerlas    legibles también. A pesar de que las palabras especiales y los nombres de funciones de SQL no distinguen entre mayúsculas y minúsculas, es una práctica común escribirlas en mayúsculas para distinguirlas de sus nombres de tabla y columna.
 
 ## Principios SOLID aplicados
 * Single-responsability : 

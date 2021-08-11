@@ -99,6 +99,40 @@ $evento->concurso->update(request()->only(['num_participantes', 'requisitos', 'g
 $evento->sesionEvento->where('id_evento', $evento->id)->update(request()->only(['hora_inicio']));
 ```
 * Utiliza sintaxis cortas y legibles siempre que sea posible
+Malo:
+
+```php
+$request->session()->get('cart');
+$request->input('name');
+```
+
+Bueno:
+
+```php
+session('cart');
+$request->name;
+```
+
+Más ejemplos
+
+Sintaxis común | Sintaxis corta y legible
+------------ | -------------
+`Session::get('cart')` | `session('cart')`
+`$request->session()->get('cart')` | `session('cart')`
+`Session::put('cart', $data)` | `session(['cart' => $data])`
+`$request->input('name'), Request::get('name')` | `$request->name, request('name')`
+`return Redirect::back()` | `return back()`
+`is_null($object->relation) ? null : $object->relation->id` | `optional($object->relation)->id`
+`return view('index')->with('title', $title)->with('client', $client)` | `return view('index', compact('title', 'client'))`
+`$request->has('value') ? $request->value : 'default';` | `$request->get('value', 'default')`
+`Carbon::now(), Carbon::today()` | `now(), today()`
+`App::make('Class')` | `app('Class')`
+`->where('column', '=', 1)` | `->where('column', 1)`
+`->orderBy('created_at', 'desc')` | `->latest()`
+`->orderBy('age', 'desc')` | `->latest('age')`
+`->orderBy('created_at', 'asc')` | `->oldest()`
+`->select('id', 'name')->get()` | `->get(['id', 'name'])`
+`->first()->name` | `->value('name')`
 * No coloques ningún tipo de lógica en los archivos de rutas.
 ```php
 // Rutas de Concurso
@@ -192,9 +226,6 @@ class LoginController extends Controller
     }
 ```
 
-* Comentar y Documentar: 
-
-    Para un mejor entendimiento por parte de quien visualice el codigo, se ha comentado las funciones importantes.
 * Longitud límite de línea:
 
    Es menos cansado leer 5 filas de amplitud corta que un largo texto a ras de hoja, por ello es una buena prática evitar escribir líneas largas y horizontales.

@@ -34,6 +34,9 @@ En el presente proyecto usamos HTML, CSS ; el gestor de Base de Datos se uso MyS
   - Presentación: Ingresar un título, nombre del ponente, tema, descripción,  fecha, hora, lugar o link del evento.
   - Concurso: Nombre del concurso, área relacionada, descripción, nombre del docente a cargo, fecha, hora, link del evento.
   - Editar Evento: Solo el administrador puede editar la información de un evento.  
+     <p align="center">
+    <img src="/imagenesINGSoft/edit.jpeg">
+  </p>
   - Eliminar Evento:  Solo el administrador puede eliminar un evento.
    <p align="center">
     <img src="/imagenesINGSoft/cec.jpeg">

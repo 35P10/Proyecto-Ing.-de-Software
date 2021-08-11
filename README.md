@@ -100,8 +100,6 @@ $evento->sesionEvento->where('id_evento', $evento->id)->update(request()->only([
 ```
 * Utiliza sintaxis cortas y legibles siempre que sea posible
 
-Ejemplos
-
 Sintaxis común | Sintaxis corta y legible
 ------------ | -------------
 `Session::get('cart')` | `session('cart')`
@@ -110,6 +108,7 @@ Sintaxis común | Sintaxis corta y legible
 `$request->input('name'), Request::get('name')` | `$request->name, request('name')`
 `return view('index')->with('title', $title)->with('client', $client)` | `return view('index', compact('title', 'client'))`
 
+Ejemplos: 
 ```php
 if(Administrador::find(Auth::user()->dni) != NULL)
   session(['isAdmin' => true]);
@@ -128,7 +127,28 @@ public function show(sesion $sesion)
 
 ```
 
-* No coloques ningún tipo de lógica en los archivos de rutas.
+* No ejecutar consultas en las plantillas Blade y utiliza el cargado prematuro (Problema N + 1)
+Malo (Para 100 ponentes, se ejecutarán 101 consultas):
+
+```php
+@foreach (Ponente::all() as $ponente)
+    {{ $ponente->profile->name }}
+@endforeach
+```
+
+Bueno (Para 100 usuarios, se ejecutarán 2 consultas):
+
+```php
+@foreach ($ponentes as $ponente)
+    <h3><a href="speaker-details.html">{{ $ponente->nombre}}</a></h3>
+    <p>{{ $ponente->grado_academico }}</p>
+    <p><strong>Especialidad: </strong>{{ $ponente->especialidad }}</p>
+    <div class="social">
+        <a href="{{ route('ponente.mostrar',$ponente->dni) }}" class="btn btn-outline-light">Ver más</a>
+     </div>
+@endforeach
+```
+* No colocar ningún tipo de lógica en los archivos de rutas.
 ```php
 // Rutas de Concurso
 Route::get('/concurso/crear/{id_sesion}', [ConcursoController::class, 'create'])->name('concurso.crear');

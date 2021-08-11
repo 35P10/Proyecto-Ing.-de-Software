@@ -246,5 +246,53 @@ En nuestro trabajo, hemos procurado seguir esta norma al no sobrecargar las func
 No dependemos de la tecnología que empleamos en la base de datos, ya que la comunicación entre los componentes del sistema es siempre mediante interfaces, y esto nos permite tener libertad a la hora de decidir las implementaciones concretas de cada elemento. Por ejemplo, podríamos cambiar la conexión a la base de datos de mysql a mongodb o postgresql sin afectar a ninguna parte del sistema.
 
 ## Conceptos DDD aplicados
+* Modules:
 
+Cada parte del proyecto tiene un dominio que aísla los códigos formados por módulos de clases relacionadas con una funcionalidad de la aplicación.
+
+<p align="center">
+  <img src="/imagenesINGSoft/dd1.png" >
+      </p>
+* Entities: 
+
+Existen diferentes entidades en el Sistema que desarrollamos, entre ellas podríamos mencionar las entidades Ponente, Participante y Evento, ya que son objeto del dominio que mantienen un estado y comportamiento más allá de la ejecución de la aplicación. A continuación se muestra la entidad Ponente, que posee una identificación única mediante su DNI.
+<p align="center">
+  <img src="/imagenesINGSoft/dd2.png" >
+      </p>
+      
+* Value Objects:
+
+Los Value Objects (VO) son solo valores, no entidades, por si solos no significan nada, tienen que estar acompañados de una entidad para que signifiquen algo o ser interpretados. 
+En nuestro sistema identificamos algunos Value Objects, como el siguiente: 
+    
+    <p align="center">
+  <img src="/imagenesINGSoft/dd3.png" >
+      </p>
+ La clase SesionEvento si bien aparece como un Entity en realidad solo es un dato que conecta la relacion N-M de las entidades Sesión y Evento y almacena el dato de la hora de Inicio. Sin estas otras entidades perdería sentido por sí misma. Es un Value Object.
+ 
+* Ubiquitous Language: 
+
+Es un concepto de gran importancia porque, además de servir de vehículo de entendimiento en el negocio y entre el negocio e IT, también sirve para identificar las particiones del Domain, que darán lugar a soluciones modulares
+
+<p align="center">
+  <img src="/imagenesINGSoft/dd4.png" >
+    <img src="/imagenesINGSoft/dd5.png" >
+      </p>
+
+* Aggregates: 
+Los agregados representan el límite lógico de un conjunto de datos, permiten modelar el sistema en pequeños subconjuntos. Para acceder a los elementos de un agregado debemos acceder mediante una entidad principal, que le sirve a modo de entrada. 
+
+Existe un agregado “Sesión” ya que esta entidad posee relaciones con otras a nivel de negocio y su acceso es mediante la entidad Programa.
+    
+    <p align="center">
+  <img src="/imagenesINGSoft/dd6.png" >
+  <img src="/imagenesINGSoft/dd7.png">
+      </p>
+* Repository:
+ 
+  En nuestro proyecto tenemos clases, o más famosamente llamados controladores (MVC), que tienen la función de repositorio, ya que, son los que controlan, dirigen, a la aplicación   por dónde debe ir dependiendo de lo que el usuario requiera al interactuar con dicha aplicación.
+   <p align="center">
+  <img src="/imagenesINGSoft/dd8.png" >
+      </p>
+  Un claro ejemplo sería en controlador de Sesión, que guarda diferentes funciones en donde consultamos dichos datos a la base de datos para que luego sean mostrados al usuario.
 

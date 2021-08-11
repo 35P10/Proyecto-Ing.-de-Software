@@ -78,21 +78,7 @@ Convención de nombres para los métodos
         return redirect()->route('home.index');
     }
 ```
-```php
-// Rutas de Concurso
-Route::get('/concurso/crear/{id_sesion}', [ConcursoController::class, 'create'])->name('concurso.crear');
-Route::post('/concurso/guardar/{sesion}', [ConcursoController::class, 'store'])->name('concurso.guardar');
-Route::get('/concurso/editar/{evento}', [ConcursoController::class, 'edit'])->name('concurso.editar');
-Route::put('/concurso/{evento}', [ConcursoController::class, 'update'])->name('concurso.actualizar');
 
-// Rutas de ponencia
-Route::get('/ponencia/crear/{id_sesion}', [PonenciaController::class, 'create'])->name('ponencia.crear');
-Route::post('/ponencia/guardar/{sesion}', [PonenciaController::class, 'store'])->name('ponencia.guardar');
-Route::get('/ponencia/editar/{evento}', [PonenciaController::class, 'edit'])->name('ponencia.editar');
-Route::put('/ponencia/{evento}', [PonenciaController::class, 'update'])->name('ponencia.actualizar');
-
-
-```
 Convención de nombre para las propiedades de modelo
 ```php
 $evento->concurso->update(request()->only(['num_participantes', 'requisitos', 'ganadores', 'moderador']));
@@ -136,8 +122,7 @@ Malo (Para 100 ponentes, se ejecutarán 101 consultas):
 @endforeach
 ```
 
-Bueno (Para 100 usuarios, se ejecutarán 2 consultas):
-
+Bueno:
 ```php
 @foreach ($ponentes as $ponente)
     <h3><a href="speaker-details.html">{{ $ponente->nombre}}</a></h3>

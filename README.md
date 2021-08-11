@@ -46,9 +46,6 @@ En el presente proyecto usamos HTML, CSS ; el gestor de Base de Datos se uso MyS
   </p>
 - Registrar inscripciones para concursos: El sistema permite a un usuario inscribirse en un concurso. Para ello se requiere que se haya iniciado sesión.
 - Buscar por filtro: El sistema permite al usuario buscar un evento por título o etiquetas.
-  <p align="center">
-    <img src="funcionalidades.png" width="650" >
-  </p>
 
 ## Práctica de código legible aplicadas
 
@@ -353,7 +350,7 @@ class User extends Authenticatable
   Cada parte del proyecto tiene un dominio que aísla los códigos formados por módulos de clases relacionadas con una funcionalidad de la aplicación.
 
    <p align="center">
-    <img src="/imagenesINGSoft/dd1.png" >
+    <img src="/imagenesINGSoft/dd1(1).png" >
       </p>
 
 * Entities: 
@@ -361,7 +358,7 @@ class User extends Authenticatable
   Existen diferentes entidades en el Sistema que desarrollamos, entre ellas podríamos mencionar las entidades Ponente, Participante y Evento, ya que son objeto del dominio que  mantienen un estado y comportamiento más allá de la ejecución de la aplicación. A continuación se muestra la entidad Ponente, que posee una identificación única mediante su DNI.
 
    <p align="center">
-      <img src="/imagenesINGSoft/dd2.png" >
+      <img src="/imagenesINGSoft/dd2(1).png" >
        </p>
       
 *  Value Objects:
@@ -370,7 +367,7 @@ class User extends Authenticatable
    En nuestro sistema identificamos algunos Value Objects, como el siguiente: 
     
     <p align="center">
-       <img src="/imagenesINGSoft/dd3.png" >
+       <img src="/imagenesINGSoft/dd3(1).png" >
       </p>
    La clase SesionEvento si bien aparece como un Entity en realidad solo es un dato que conecta la relacion N-M de las entidades Sesión y Evento y almacena el dato de la hora de Inicio. Sin estas otras entidades perdería sentido por sí misma. Es un Value Object.
  
@@ -379,8 +376,8 @@ class User extends Authenticatable
    Es un concepto de gran importancia porque, además de servir de vehículo de entendimiento en el negocio y entre el negocio e IT, también sirve para identificar las particiones del Domain, que darán lugar a soluciones modulares
 
    <p align="center">
-  <img src="/imagenesINGSoft/dd4.png" >
-    <img src="/imagenesINGSoft/dd5.png" >
+  <img src="/imagenesINGSoft/dd4(1).png" >
+    <img src="/imagenesINGSoft/dd5(1).png" >
       </p>
 
 *  Aggregates: 
@@ -389,8 +386,8 @@ class User extends Authenticatable
    Existe un agregado “Sesión” ya que esta entidad posee relaciones con otras a nivel de negocio y su acceso es mediante la entidad Programa.
     
     <p align="center">
-  <img src="/imagenesINGSoft/dd6.png" >
-      <img src="/imagenesINGSoft/dd7.png">
+  <img src="/imagenesINGSoft/dd6(1).png" >
+      <img src="/imagenesINGSoft/dd7(1).png">
       </p>
 
 * Repository:

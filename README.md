@@ -237,12 +237,9 @@ El estilo de programación utilizado fue siguiendo el paradigma orientado a obje
 
 * 	Código mantenible: 
 El sistema está diseñado de forma que pueda ser actualizado cada cierto tiempo, con independencia entre sus funciones y clases, logrando así el programa perdure.
-
-* 	Capitalizar Palabras Especiales de SQL: 
-La interacción de bases de datos es una gran parte de la mayoría de las aplicaciones web. Si está escribiendo consultas SQL sin procesar, es una buena idea mantenerlas legibles también. A pesar de que las palabras especiales y los nombres de funciones de SQL no distinguen entre mayúsculas y minúsculas, es una práctica común escribirlas en mayúsculas para distinguirlas de sus nombres de tabla y columna.
-
-*	Estilo de indentación: 
-Se utiliza en lenguajes de programación que usan llaves para sangrar o delimitar bloques lógicos de código, donde es también un punto clave el buen estilo. Usando un estilo lógico y consistente hace el código de uno más legible. En el sistema intentamos ceñirnos a utilizar adecuadamente el uso de estos delimitadores, para mejor entendimiento del código.
+ 
+* Composición de funciones.:
+  Esta sección muestra tres formas diferentes de conectar las llamadas a funciones. La primera utiliza la recursión. La segunda utiliza un estilo de paso de continuación, donde a cada función se le da también la siguiente función que debe ser llamada. El programa resultante es un poco difícil de leer debido a esto. El tercero ilustra el concepto de mónada, y todas las llamadas a las funciones y los valores resultantes se hacen a través de la mónada, creando una tubería de llamadas.
 
 ## Principios SOLID aplicados
 * Single-responsability : 
@@ -250,6 +247,7 @@ Se utiliza en lenguajes de programación que usan llaves para sangrar o delimita
   - Si una Clase tiene muchas responsabilidades, aumenta la posibilidad de errores porque hacer cambios en una de sus responsabilidades podría afectar a las otras sin que usted     lo sepa.
   -  "Una clase debe tener solo una razón para cambiar"
   Se eligió esta clase porque cumple con las características de este, es decir, la Clase User se encarga únicamente de recopilar la información de una persona como nombre, email,  password.
+
  
  ```php
 <?php

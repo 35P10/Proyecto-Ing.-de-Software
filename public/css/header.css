@@ -1,0 +1,185 @@
+* {
+  margin: 0%;
+  padding: 0;
+  
+ 
+}
+.Main__Header{
+  padding: 1.3% 5%;
+  background-color: #2D4249;
+  display :flex;
+  justify-content :space-between;
+  color :black;
+  font-weight: bold;
+  
+}
+.Main__Header  img {
+    
+  height: 60px;
+  margin:-right -15px 
+}  
+.Main__Header-img{
+    display: flex;
+    align-items: center
+}
+
+    .Main__Header-nameLogo p{
+    padding: 0;
+    margin: 0;
+    font-size: 20px ; 
+    font-weight: bolder;
+    color: black;
+    }
+  
+    
+  .Main__Header-navbar {
+    
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .Main__Header-navbar ul{
+    margin-left: 110px;
+    display: flex;
+    align-items: flex-start;
+    list-style: none;
+    flex-direction: row;
+    margin-top: 15px;
+  }
+  
+  .Main__Header-button { 
+    background-color: #f82249;
+    border: none;
+    border-radius: 25px;
+    color: #2D4249;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family:  sans-serif;
+    height: 50px;
+    letter-spacing: 1px;
+    padding: 10px;
+    margin: 10px ;
+  }
+  .Main__Header-button:hover {
+    color: gray
+  }
+  a{
+    text-decoration: none;
+    color: white;
+    padding: 0 10px;
+  }
+  a:hover {
+    color: gray;
+  }
+
+
+
+
+  .Services{
+  padding:0% 10%  5% 10%;
+  text-align:center;
+  background-color: #2D4249;
+  }
+  h1   { 
+    margin :50px 50px;
+    font-size :50px;
+    font-weight: 900;
+    color:  white
+  }  
+  h2{
+    font-size :40px;
+    font-weight: 700;
+  }
+  h3{
+    color:  white;
+    font-size: 30px;
+    font-weight: bolder;
+  } 
+  h4{
+    font-size: 20px  ;
+    font-weight :bold;
+    color :white ;
+  }
+  strong{ 
+    color: #f82249
+  }
+    
+  .Services-bg img{
+    margin-left: -130px;
+    margin-right: 0;
+    height :85vh;
+    width: 99vw;
+    opacity: 0.2;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    background-size: cover;
+  }
+  .Services-bg button{
+    background-color: #f82249;
+    border: none;
+    border-radius: 25px;
+    color :#0e1b4d;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family:  sans-serif;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 15px;
+  } 
+  .Services-bg button:hover {
+    color: gray  
+  }
+  .info{ 
+    border-radius :0px 0px 10px 10px;
+    width: 700px  ; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+   
+
+  } 
+.button-left {
+    width: 120px;
+    background :#0e1b4d;
+    background-color: #0e324d;
+    border: 3px solid #f6f6f6 ;
+    color:#f6f6f6 ;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Muli', sans-serif;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 10px 0px;
+    margin-right: 10px
+  }
+
+  .input{
+    background-color: white;
+    border-bottom: 2px solid #2D4249;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-radius: 10px;
+    color: black;
+    font-family: 'Muli', sans-serif;
+    font-size: 14px;
+    height: 30px;
+   
+    outline: none;
+    padding: 0px 20px;
+
+  }
+.b_evento{
+  margin:-70px 50px;
+}
+.block{
+  display: block;
+}

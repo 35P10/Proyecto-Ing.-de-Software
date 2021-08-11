@@ -238,8 +238,13 @@ El estilo de programación utilizado fue siguiendo el paradigma orientado a obje
 * 	Código mantenible: 
 El sistema está diseñado de forma que pueda ser actualizado cada cierto tiempo, con independencia entre sus funciones y clases, logrando así el programa perdure.
  
-* Composición de funciones.:
+* Composición de funciones:
   Esta sección muestra como se conectan las llamadas a funciones. Se utiliza un estilo de paso de continuación, donde a cada función se le da también la siguiente función que debe ser llamada.
+  <p align="center">
+      <img src="/imagenesINGSoft/estilos.jpeg" >
+      <img src="/imagenesINGSoft/estilos1.jpeg" >
+      </p>
+
 
 ## Principios SOLID aplicados
 * Single-responsability : 

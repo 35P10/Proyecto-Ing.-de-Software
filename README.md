@@ -45,9 +45,9 @@ Vistas | kebab-case | show-filtered.blade.php | ~~showFiltered.blade.php, show_f
 
 A continuación se mostrará la organización de carpetas y archivos, así como el nombramiento de los modelos, controladores, y vistas:
   <p align="center">
-    <img src="bp-1.png" width="650" >
-    <img src="bp-2.png" width="650" >
-    <img src="bp-3.png" width="650" >
+    <img src="/imagenesINGSoft/bp-1.png" width="650" >
+    <img src="/imagenesINGSoft/bp-2.png" width="650" >
+    <img src="/imagenesINGSoft/bp-3.png" width="650" >
   </p>
  Convención de nombres para relaciones de hasOne o belongsTo
  ```php

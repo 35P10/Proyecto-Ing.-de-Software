@@ -13,6 +13,9 @@ En el presente proyecto usamos HTML, CSS ; el gestor de Base de Datos se uso MyS
     <img src="/imagenesINGSoft/sesion.jpeg">
   </p>
 - Registrar usuario: El sistema debe permitir al usuario registrarse. El sistema pedirá al usuario ingresar su correo electrónico institucional (si es que es estudiante de la UNSA) o personal (si es un usuario no relacionado con la UNSA) y contraseña.
+   <p align="center">
+    <img src="/imagenesINGSoft/reg.jpeg">
+  </p>
 - Mostrar ediciones de la semana de la computación: El sistema lista los años en los que se realizó la Semana de la computación.
     <p align="center">
     <img src="/imagenesINGSoft/ve.jpeg">

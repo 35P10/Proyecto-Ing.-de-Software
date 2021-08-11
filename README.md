@@ -23,9 +23,9 @@ En el presente proyecto usamos HTML, CSS ; el gestor de Base de Datos se uso MyS
   - Eliminar Evento:  Solo el administrador puede eliminar un evento.
 - Registrar inscripciones para concursos: El sistema permite a un usuario inscribirse en un concurso. Para ello se requiere que se haya iniciado sesión.
 - Buscar por filtro: El sistema permite al usuario buscar un evento por título o etiquetas.
-<p align="center">
-  <img src="funcionalidades.png" width="650" >
-</p>
+  <p align="center">
+    <img src="funcionalidades.png" width="650" >
+  </p>
 
 ## Práctica de código legible aplicadas
 
@@ -158,10 +158,11 @@ class LoginController extends Controller
    La interacción de bases de datos es una gran parte de la mayoría de las aplicaciones web. Si está escribiendo consultas SQL sin procesar, es una buena idea mantenerlas    legibles también. A pesar de que las palabras especiales y los nombres de funciones de SQL no distinguen entre mayúsculas y minúsculas, es una práctica común escribirlas en mayúsculas para distinguirlas de sus nombres de tabla y columna.
 
 ## Principios SOLID aplicados
-* Single-responsability : El principio de responsabilidad única ( SRP ) es un principio de programación de computadoras que establece que cada módulo , clase o función en un programa de computadora debe tener responsabilidad sobre una sola parte de la funcionalidad de ese programa , y debe encapsular esa parte. Todo eso de la función módulo, clase o servicios deben estar alineados estrechamente con esa responsabilidad.
+* Single-responsability : 
+  El principio de responsabilidad única ( SRP ) es un principio de programación de computadoras que establece que cada módulo , clase o función en un programa de computadora debe   tener responsabilidad sobre una sola parte de la funcionalidad de ese programa , y debe encapsular esa parte. Todo eso de la función módulo, clase o servicios deben estar alineados estrechamente con esa responsabilidad.
   - Si una Clase tiene muchas responsabilidades, aumenta la posibilidad de errores porque hacer cambios en una de sus responsabilidades podría afectar a las otras sin que usted     lo sepa.
   -  "Una clase debe tener solo una razón para cambiar"
- Se eligió esta clase porque cumple con las características de este, es decir, la Clase User se encarga únicamente de recopilar la información de una persona como nombre, email, password.
+  Se eligió esta clase porque cumple con las características de este, es decir, la Clase User se encarga únicamente de recopilar la información de una persona como nombre, email,  password.
  
  ```php
 <?php
@@ -206,88 +207,96 @@ class User extends Authenticatable
 
 
 ```
-El principio de responsabilidad única busca que el código quede encapsulado y exista independencia entre las clases, sus funcionalidades. Al utilizar clases hemos procurado cumplir con este criterio, ya que encapsulamos la funcionalidad de cada una para que realicen una única función. 
-<p align="center">
-  <img src="/imagenesINGSoft/respUnica4.png" >
+   El principio de responsabilidad única busca que el código quede encapsulado y exista independencia entre las clases, sus funcionalidades. Al utilizar clases hemos procurado   cumplir con este criterio, ya que encapsulamos la funcionalidad de cada una para que realicen una única función. 
+
+   <p align="center">
+      <img src="/imagenesINGSoft/respUnica4.png" >
       </p>
-Por ejemplo, en la imagen se ve que se han independizado las funciones, entre ellas editar la sesión, y otras. Esto también ayuda a la reutilización del código en caso de cambios o mantenimiento. 
+
+   Por ejemplo, en la imagen se ve que se han independizado las funciones, entre ellas editar la sesión, y otras. Esto también ayuda a la reutilización del código en caso de cambios o mantenimiento. 
 
 *  Open-Closed:
+   
+   Entonces una clase debe quedar abierto para extensión y cerrado para modificación. Para añadir funcionalidades debe escribirse nuevo código, no modificar código existente,   escribir código que no se tenga que cambiar cada vez que cambian los requerimientos . Ej con herencia y polimorfismo
 
-Entonces una clase debe quedar abierto para extensión y cerrado para modificación. Para añadir funcionalidades debe escribirse nuevo código, no modificar código existente, escribir código que no se tenga que cambiar cada vez que cambian los requerimientos . Ej con herencia y polimorfismo
+   Por ejemplo la clase persona es la clase base que utilizaremos  para las clases usuario y ponente
 
-Por ejemplo la clase persona es la clase base que utilizaremos  para las clases usuario y ponente
-
-<p align="center">
-  <img src="/imagenesINGSoft/AC1.jpeg" >
+   <p align="center">
+      <img src="/imagenesINGSoft/AC1.jpeg" >
       </p>
 
 *  Segregación de la Interfaz: 
 
-Según este principio es mejor tener una clase pequeña y especializada que una muy grande, para poder hacer un mejor objetivo hacia las necesidades del sistema. 
-En nuestro trabajo, hemos procurado seguir esta norma al no sobrecargar las funcionalidades de las clases sin más de lo que se necesite. Por ejemplo en la captura se ve que cada función está dirigida a un único fin, aunque pertenezcan al mismo sistema, estan especializados. 
-<p align="center">
-  <img src="/imagenesINGSoft/segI.png" >
+   Según este principio es mejor tener una clase pequeña y especializada que una muy grande, para poder hacer un mejor objetivo hacia las necesidades del sistema. 
+   En nuestro trabajo, hemos procurado seguir esta norma al no sobrecargar las funcionalidades de las clases sin más de lo que se necesite. Por ejemplo en la captura se ve que      cada función está dirigida a un único fin, aunque pertenezcan al mismo sistema, estan especializados. 
+
+   <p align="center">
+     <img src="/imagenesINGSoft/segI.png" >
       </p>
 
 * Inversión de dependencia: 
 
   El principio de inversión de dependencia busca reducir el acople entre sistemas de software. 
-  En nuestro caso, el sistema independiza la tecnología de bases de datos, ya que podríamos migrar con facilidad a otro sistema de bases de datos, pues utilizamos el framework Laravel, donde existe una abstracción que nos permite cambiar el tipo de BD utilizada mediante modificar algunos datos de forma sencilla. Esto nos brinda libertad para la implementación y cambiar de tecnología de BD afectando mínimamente las partes del sistema
+  En nuestro caso, el sistema independiza la tecnología de bases de datos, ya que podríamos migrar con facilidad a otro sistema de bases de datos, pues utilizamos el framework  Laravel, donde existe una abstracción que nos permite cambiar el tipo de BD utilizada mediante modificar algunos datos de forma sencilla. Esto nos brinda libertad para la implementación y cambiar de tecnología de BD afectando mínimamente las partes del sistema
 
-<p align="center">
-  <img src="" >
- </p>
-No dependemos de la tecnología que empleamos en la base de datos, ya que la comunicación entre los componentes del sistema es siempre mediante interfaces, y esto nos permite tener libertad a la hora de decidir las implementaciones concretas de cada elemento. Por ejemplo, podríamos cambiar la conexión a la base de datos de mysql a mongodb o postgresql sin afectar a ninguna parte del sistema.
+   <p align="center">
+      <img src="/imagenesINGSoft/si.jpeg" >
+   </p>
+   No dependemos de la tecnología que empleamos en la base de datos, ya que la comunicación entre los componentes del sistema es siempre mediante interfaces, y esto nos permite tener libertad a la hora de decidir las implementaciones concretas de cada elemento. Por ejemplo, podríamos cambiar la conexión a la base de datos de mysql a mongodb o postgresql sin afectar a ninguna parte del sistema.
 
 ## Conceptos DDD aplicados
 * Modules:
+ 
+  Cada parte del proyecto tiene un dominio que aísla los códigos formados por módulos de clases relacionadas con una funcionalidad de la aplicación.
 
-Cada parte del proyecto tiene un dominio que aísla los códigos formados por módulos de clases relacionadas con una funcionalidad de la aplicación.
-
-<p align="center">
-  <img src="/imagenesINGSoft/dd1.png" >
+   <p align="center">
+    <img src="/imagenesINGSoft/dd1.png" >
       </p>
-*  Entities: 
 
-Existen diferentes entidades en el Sistema que desarrollamos, entre ellas podríamos mencionar las entidades Ponente, Participante y Evento, ya que son objeto del dominio que mantienen un estado y comportamiento más allá de la ejecución de la aplicación. A continuación se muestra la entidad Ponente, que posee una identificación única mediante su DNI.
-<p align="center">
-  <img src="/imagenesINGSoft/dd2.png" >
-      </p>
+* Entities: 
+
+  Existen diferentes entidades en el Sistema que desarrollamos, entre ellas podríamos mencionar las entidades Ponente, Participante y Evento, ya que son objeto del dominio que  mantienen un estado y comportamiento más allá de la ejecución de la aplicación. A continuación se muestra la entidad Ponente, que posee una identificación única mediante su DNI.
+
+   <p align="center">
+      <img src="/imagenesINGSoft/dd2.png" >
+       </p>
       
 *  Value Objects:
 
-Los Value Objects (VO) son solo valores, no entidades, por si solos no significan nada, tienen que estar acompañados de una entidad para que signifiquen algo o ser interpretados. 
-En nuestro sistema identificamos algunos Value Objects, como el siguiente: 
+   Los Value Objects (VO) son solo valores, no entidades, por si solos no significan nada, tienen que estar acompañados de una entidad para que signifiquen algo o ser interpretados. 
+   En nuestro sistema identificamos algunos Value Objects, como el siguiente: 
     
     <p align="center">
-  <img src="/imagenesINGSoft/dd3.png" >
+       <img src="/imagenesINGSoft/dd3.png" >
       </p>
- La clase SesionEvento si bien aparece como un Entity en realidad solo es un dato que conecta la relacion N-M de las entidades Sesión y Evento y almacena el dato de la hora de Inicio. Sin estas otras entidades perdería sentido por sí misma. Es un Value Object.
+   La clase SesionEvento si bien aparece como un Entity en realidad solo es un dato que conecta la relacion N-M de las entidades Sesión y Evento y almacena el dato de la hora de Inicio. Sin estas otras entidades perdería sentido por sí misma. Es un Value Object.
  
 *  Ubiquitous Language: 
 
-Es un concepto de gran importancia porque, además de servir de vehículo de entendimiento en el negocio y entre el negocio e IT, también sirve para identificar las particiones del Domain, que darán lugar a soluciones modulares
+   Es un concepto de gran importancia porque, además de servir de vehículo de entendimiento en el negocio y entre el negocio e IT, también sirve para identificar las particiones del Domain, que darán lugar a soluciones modulares
 
-<p align="center">
+   <p align="center">
   <img src="/imagenesINGSoft/dd4.png" >
     <img src="/imagenesINGSoft/dd5.png" >
       </p>
 
 *  Aggregates: 
-Los agregados representan el límite lógico de un conjunto de datos, permiten modelar el sistema en pequeños subconjuntos. Para acceder a los elementos de un agregado debemos acceder mediante una entidad principal, que le sirve a modo de entrada. 
+   Los agregados representan el límite lógico de un conjunto de datos, permiten modelar el sistema en pequeños subconjuntos. Para acceder a los elementos de un agregado debemos  acceder mediante una entidad principal, que le sirve a modo de entrada. 
 
-Existe un agregado “Sesión” ya que esta entidad posee relaciones con otras a nivel de negocio y su acceso es mediante la entidad Programa.
+   Existe un agregado “Sesión” ya que esta entidad posee relaciones con otras a nivel de negocio y su acceso es mediante la entidad Programa.
     
     <p align="center">
   <img src="/imagenesINGSoft/dd6.png" >
-  <img src="/imagenesINGSoft/dd7.png">
+      <img src="/imagenesINGSoft/dd7.png">
       </p>
-*  Repository:
+
+* Repository:
  
   En nuestro proyecto tenemos clases, o más famosamente llamados controladores (MVC), que tienen la función de repositorio, ya que, son los que controlan, dirigen, a la aplicación   por dónde debe ir dependiendo de lo que el usuario requiera al interactuar con dicha aplicación.
-   <p align="center">
-  <img src="/imagenesINGSoft/dd8.png" >
-      </p>
+
+     <p align="center">
+       <img src="/imagenesINGSoft/dd8.png" >
+     </p>
+
   Un claro ejemplo sería en controlador de Sesión, que guarda diferentes funciones en donde consultamos dichos datos a la base de datos para que luego sean mostrados al usuario.
 

@@ -29,6 +29,9 @@ En el presente proyecto usamos HTML, CSS ; el gestor de Base de Datos se uso MyS
   - Mostrar información general: Se muestra el título, información del ponente, tema, fecha, hora, lugar o link del evento.
   - Puntuar evento:  El usuario podrá dar una puntuación a los evento de acuerdo a su nivel de satisfacción. 
   - Visualizar material adjunto: El usuario puede visualizar las presentaciones se han adjuntado junto con el evento
+  <p align="center">
+    <img src="/imagenesINGSoft/verevento.jpeg">
+  </p>
 - Gestionar eventos: 
   - Publicar evento: El sistema permite al administrador crear un evento, dependiendo el tipo de evento, el sistema pedirá que ingresar la información general del evento : 
   - Presentación: Ingresar un título, nombre del ponente, tema, descripción,  fecha, hora, lugar o link del evento.
